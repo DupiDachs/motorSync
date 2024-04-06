@@ -48,7 +48,7 @@ The Macro does not use any delayed gcode. This is achieved by having a constant 
 
 The Macro determines static noise of your accelerometer (and gravity) and removes it from the measurement, which makes the approach more reliable.
 
-To determine the quality of the synchronization to a single number, the peak vibration is determined and then the area of the chart is determined within an (arbitrary) 12ms timespan. The data that was cleaned from noise looks like this:
+To bring down the quality of the synchronization to a single number, the peak vibration is determined and then the area of the chart is determined within an (arbitrary) 12ms timespan. The data that was cleaned from noise looks like this:
 
 <img src="Vibrations.png" width="500">
 
@@ -67,7 +67,7 @@ Differences between the two scripts
 | timing            | hard coded manually                                                                   | klipper times Macro automatically                         |
 | motor sync factor | determined by highest peaks of magnitude and moving average                           | integrate to determine area of magnitude                  |
 
-motors_sync has a big potential of speedup using the BUZZ Macro of motorSync. In the end, motorSync is not that much faster because more iterations are performed.
+motors_sync has a big potential of speedup using the BUZZ Macro of motorSync. In the end, motorSync is faster, but more iterations are performed. Getting a result accurate to a 1/32 fullstep requires 72sec.
 
 ## Example output
 ```
