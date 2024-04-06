@@ -1,0 +1,7 @@
+functions:
+  get_noise_call:
+    path: /home/pi/klipper_functions/motorSync_noise.py
+    function: get_noise
+  get_accel_call:
+    path: /home/pi/klipper_functions/motorSync_accel.py
+    function: get_accel
