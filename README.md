@@ -48,8 +48,13 @@ The Macro does not use any delayed gcode. This is achieved by having a constant 
 
 The Macro determines static noise of your accelerometer (and gravity) and removes it from the measurement, which makes the approach more reliable.
 
-To determine the quality of the synchronization to a single number, the peak vibration is determined and then the area of the chart is determined within an (arbitrary) 12ms timespan. This looks like this:
+To determine the quality of the synchronization to a single number, the peak vibration is determined and then the area of the chart is determined within an (arbitrary) 12ms timespan. The data that was cleaned from noise looks like this:
 
+<img src="Vibrations.png" width="500">
+
+Now the magnitude is calculated and the area between the two markers is calculated, representing the quality of the synchronization.
+
+<img src="Magnitude" width="500">
 
 ## Kudos
 Kudos goes to Altzbox with his initial script: https://github.com/altzbox/motors_sync/wiki/Motor-synchronization-on-printers-with-QuadXY-kinematics-(AWD)
