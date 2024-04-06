@@ -54,7 +54,7 @@ To determine the quality of the synchronization to a single number, the peak vib
 
 Now the magnitude is calculated and the area between the two markers is calculated, representing the quality of the synchronization.
 
-<img src="Magnitude" width="500">
+<img src="Magnitude.png" width="500">
 
 ## Kudos
 Kudos goes to Altzbox with his initial script: https://github.com/altzbox/motors_sync/wiki/Motor-synchronization-on-printers-with-QuadXY-kinematics-(AWD)
