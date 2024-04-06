@@ -67,67 +67,65 @@ Differences between the two scripts
 | timing            | hard coded manually                                                                   | klipper times Macro automatically                         |
 | motor sync factor | determined by highest peaks of magnitude and moving average                           | integrate to determine area of magnitude                  |
 
-motors_sync has a big potential of speedup using the BUZZ Macro of motorSync. In the end, motorSync is faster, but more iterations are performed. Getting a result accurate to a 1/32 fullstep requires 72sec.
+motors_sync has a big potential of speedup using the BUZZ Macro of motorSync. In the end, motorSync is faster, but more iterations are performed. Getting a result accurate to a 1/32 fullstep requires 46sec + homing.
 
 ## Example output
 ```
-21:33:04; $ MOTSYNC_SYNC
-21:33:04; echo: MOTSYNC: Starting AWD motor synchronization for
-21:33:05; echo: MOTSYNC: microstepping of 32 and a fullstep distance of 0.1 mm.
-21:33:05; echo: MOTSYNC: Home and move to center.
-21:33:18; echo: MOTSYNC: Measure noise.
-21:33:20; echo: MOTSYNC: Determined noise as (x,y,z) (335.7700145872341, 359.90188497872344, 9211.62671228936).
-21:33:20; echo: MOTSYNC: Optimize for best X position.
-21:33:20; echo: MOTSYNC: Evaluate synchronization at microstep position -16.0
-21:33:22; echo: MOTSYNC: Synchronization factor is 106.05982502482075.
-21:33:22; echo: MOTSYNC: Evaluate synchronization at microstep position -8.0
-21:33:25; echo: MOTSYNC: Synchronization factor is 10.991023219601232.
-21:33:25; echo: MOTSYNC: Evaluate synchronization at microstep position 0.0
-21:33:27; echo: MOTSYNC: Synchronization factor is 29.322061996377503.
-21:33:28; echo: MOTSYNC: Evaluate synchronization at microstep position 8.0
-21:33:30; echo: MOTSYNC: Synchronization factor is 45.7907787160798.
-21:33:30; echo: MOTSYNC: Evaluate synchronization at microstep position 16.0
-21:33:32; echo: MOTSYNC: Synchronization factor is 57.36115538388715.
-21:33:33; echo: MOTSYNC: Evaluate synchronization at microstep position -4.0
-21:33:35; echo: MOTSYNC: Synchronization factor is 12.799137946132689.
-21:33:35; echo: MOTSYNC: Evaluate synchronization at microstep position -12.0
-21:33:37; echo: MOTSYNC: Synchronization factor is 88.57909000023558.
-21:33:37; echo: MOTSYNC: Evaluate synchronization at microstep position -6.0
-21:33:40; echo: MOTSYNC: Synchronization factor is 2.939645008131497.
-21:33:40; echo: MOTSYNC: Evaluate synchronization at microstep position -10.0
-21:33:43; echo: MOTSYNC: Synchronization factor is 7.684410890565739.
-21:33:43; echo: MOTSYNC: Evaluate synchronization at microstep position -7.0
-21:33:45; echo: MOTSYNC: Synchronization factor is 17.0378368829733.
-21:33:45; echo: MOTSYNC: Evaluate synchronization at microstep position -9.0
-21:33:48; echo: MOTSYNC: Synchronization factor is 16.62006898968306.
-21:33:48; echo: MOTSYNC: Final x synchronization factor is 2.939645008131497
-21:33:48; echo: MOTSYNC: Final position is -6 microstep(s)
-21:33:48; echo: MOTSYNC: Optimize for best Y position.
-21:33:48; echo: MOTSYNC: Evaluate synchronization at microstep position -16.0
-21:33:50; echo: MOTSYNC: Synchronization factor is 2.531243225865282.
-21:33:50; echo: MOTSYNC: Evaluate synchronization at microstep position -8.0
-21:33:53; echo: MOTSYNC: Synchronization factor is 27.604444991219808.
-21:33:53; echo: MOTSYNC: Evaluate synchronization at microstep position 0.0
-21:33:55; echo: MOTSYNC: Synchronization factor is 40.12537643932361.
-21:33:55; echo: MOTSYNC: Evaluate synchronization at microstep position 8.0
-21:33:58; echo: MOTSYNC: Synchronization factor is 57.386973112811056.
-21:33:58; echo: MOTSYNC: Evaluate synchronization at microstep position 16.0
-21:34:00; echo: MOTSYNC: Synchronization factor is 65.47827744697699.
-21:34:00; echo: MOTSYNC: Evaluate synchronization at microstep position -12.0
-21:34:03; echo: MOTSYNC: Synchronization factor is 21.68640305355946.
-21:34:03; echo: MOTSYNC: Evaluate synchronization at microstep position -20.0
-21:34:05; echo: MOTSYNC: Synchronization factor is 13.77146702969177.
-21:34:05; echo: MOTSYNC: Evaluate synchronization at microstep position -14.0
-21:34:08; echo: MOTSYNC: Synchronization factor is 25.25641141375112.
-21:34:08; echo: MOTSYNC: Evaluate synchronization at microstep position -18.0
-21:34:10; echo: MOTSYNC: Synchronization factor is 22.7587027743155.
-21:34:11; echo: MOTSYNC: Evaluate synchronization at microstep position -15.0
-21:34:13; echo: MOTSYNC: Synchronization factor is 27.249913676231312.
-21:34:13; echo: MOTSYNC: Evaluate synchronization at microstep position -17.0
-21:34:16; echo: MOTSYNC: Synchronization factor is 25.2214910769776.
-21:34:16; echo: MOTSYNC: Final y synchronization factor is 2.531243225865282
-21:34:16; echo: MOTSYNC: Final position is -16 microstep(s)
-21:34:16; echo: MOTSYNC: Done!
+22:23:29; $ MOTSYNC_SYNC
+22:23:29; echo: MOTSYNC: Starting AWD motor synchronization for
+22:23:29; echo: MOTSYNC: microstepping of 32 and a fullstep distance of 0.1 mm.
+22:23:29; echo: MOTSYNC: Home and move to center.
+22:23:42; echo: MOTSYNC: Measure noise.
+22:23:44; echo: MOTSYNC: Determined noise as (x,y,z) (313.37407302049183, 377.71019840573774, 9218.900971946721).
+22:23:44; echo: MOTSYNC: Optimize for best X position.
+22:23:44; echo: MOTSYNC: Evaluate synchronization at microstep position -16.0
+22:23:46; echo: MOTSYNC: Synchronization factor is 131.10201682386037.
+22:23:46; echo: MOTSYNC: Evaluate synchronization at microstep position -8.0
+22:23:48; echo: MOTSYNC: Synchronization factor is 122.75476548584527.
+22:23:48; echo: MOTSYNC: Evaluate synchronization at microstep position 0.0
+22:23:50; echo: MOTSYNC: Synchronization factor is 10.144989450044031.
+22:23:50; echo: MOTSYNC: Evaluate synchronization at microstep position 8.0
+22:23:52; echo: MOTSYNC: Synchronization factor is 2.9955519500327896.
+22:23:52; echo: MOTSYNC: Evaluate synchronization at microstep position 16.0
+22:23:54; echo: MOTSYNC: Synchronization factor is 15.33262148629301.
+22:23:54; echo: MOTSYNC: Evaluate synchronization at microstep position 12.0
+22:23:56; echo: MOTSYNC: Synchronization factor is 3.403840422775477.
+22:23:56; echo: MOTSYNC: Evaluate synchronization at microstep position 4.0
+22:23:58; echo: MOTSYNC: Synchronization factor is 2.5624780210309894.
+22:23:58; echo: MOTSYNC: Evaluate synchronization at microstep position 10.0
+22:24:00; echo: MOTSYNC: Synchronization factor is 3.307435555259079.
+22:24:00; echo: MOTSYNC: Evaluate synchronization at microstep position 6.0
+22:24:02; echo: MOTSYNC: Synchronization factor is 2.829363542729999.
+22:24:02; echo: MOTSYNC: Evaluate synchronization at microstep position 9.0
+22:24:04; echo: MOTSYNC: Synchronization factor is 2.585406277696018.
+22:24:04; echo: MOTSYNC: Evaluate synchronization at microstep position 7.0
+22:24:06; echo: MOTSYNC: Synchronization factor is 2.6128725245745064.
+22:24:06; echo: MOTSYNC: Final x synchronization factor is 2.5624780210309894
+22:24:06; echo: MOTSYNC: Final position is 4 microstep(s)
+22:24:06; echo: MOTSYNC: Optimize for best Y position.
+22:24:06; echo: MOTSYNC: Evaluate synchronization at microstep position -16.0
+22:24:08; echo: MOTSYNC: Synchronization factor is 2.1976272697568.
+22:24:08; echo: MOTSYNC: Evaluate synchronization at microstep position -8.0
+22:24:10; echo: MOTSYNC: Synchronization factor is 18.33726938847482.
+22:24:10; echo: MOTSYNC: Evaluate synchronization at microstep position 0.0
+22:24:12; echo: MOTSYNC: Synchronization factor is 28.6595991124009.
+22:24:12; echo: MOTSYNC: Evaluate synchronization at microstep position 8.0
+22:24:14; echo: MOTSYNC: Synchronization factor is 46.8069367532272.
+22:24:14; echo: MOTSYNC: Evaluate synchronization at microstep position 16.0
+22:24:16; echo: MOTSYNC: Synchronization factor is 62.87347487455113.
+22:24:16; echo: MOTSYNC: Evaluate synchronization at microstep position -12.0
+22:24:18; echo: MOTSYNC: Synchronization factor is 8.183742076236035.
+22:24:18; echo: MOTSYNC: Evaluate synchronization at microstep position -20.0
+22:24:20; echo: MOTSYNC: Synchronization factor is 2.7796217335183773.
+22:24:20; echo: MOTSYNC: Evaluate synchronization at microstep position -14.0
+22:24:22; echo: MOTSYNC: Synchronization factor is 3.207420021822505.
+22:24:22; echo: MOTSYNC: Evaluate synchronization at microstep position -18.0
+22:24:24; echo: MOTSYNC: Synchronization factor is 8.369112710219913.
+22:24:24; echo: MOTSYNC: Evaluate synchronization at microstep position -15.0
+22:24:26; echo: MOTSYNC: Synchronization factor is 15.572115661919586.
+22:24:26; echo: MOTSYNC: Evaluate synchronization at microstep position -17.0
+22:24:28; echo: MOTSYNC: Synchronization factor is 13.91230988006706.
+22:24:28; echo: MOTSYNC: Final y synchronization factor is 2.1976272697568
+22:24:28; echo: MOTSYNC: Final position is -16 microstep(s)
+22:24:28; echo: MOTSYNC: Done!
 ```
-
-I still think I have an issue with my Y axis, so jeah it looks slightly off...
