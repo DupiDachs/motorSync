@@ -20,6 +20,12 @@ def readCSV():
     # Read and delete the processed CSV file
     if os.path.isfile(file_path):
         data = pd.read_csv(file_path)
+        #for i in range(100):
+        #    if os.path.isfile(file_path+str(i)):
+        #        i = i+1
+        #    else:
+        #        os.rename(file_path,file_path+str(i))
+        #        break
         os.remove(file_path)
     else:
     # Error check
@@ -37,20 +43,16 @@ def get_accel(noise):
         data['accel_y'] = (data['accel_y']-noise[1])**2
         data['accel_z'] = (data['accel_z']-noise[2])**2
 
-        # Determine representative index of maximum acceleration
-        index_x = np.argmax(data['accel_x'])
-        index_y = np.argmax(data['accel_y'])
-        index_z = np.argmax(data['accel_z'])
-        index = min([index_x, index_y, index_z])
-
         # Determine magnitude
         magnitude = np.array(np.sqrt(data['accel_x'] + data['accel_y'] + data['accel_z']))
 
-        # Determine sensible timeframe (-2ms before peak ... +10ms after peak)
-        before = 0.002
-        after = 0.010
-        index_start = (np.abs(data['#time'] - (data['#time'][index]-before))).argmin()
-        index_end = (np.abs(data['#time'] - (data['#time'][index]+after))).argmin()
+        # Determine representative index of maximum acceleration
+        max_ind = np.argmax(magnitude)
+        index_start = np.argmax(magnitude>magnitude[max_ind]/2)
+
+        # Determine sensible timeframe (time at peak/2 ... +20ms after peak)
+        after = 0.020
+        index_end = (np.abs(data['#time'] - (data['#time'][max_ind]+after))).argmin()
 
         # These checks should not be necessary
         if (index_start < 0):
@@ -76,4 +78,4 @@ def get_accel(noise):
         return integral
     else:
         #return (0, 0, 0)
-        return 0
+        return 999999
