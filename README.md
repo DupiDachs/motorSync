@@ -1,6 +1,6 @@
 # motorSync
 
-This repository contains scripts to do motor synchronization for AWD 3D printers. It has been prepared to be used on the VZbot
+This repository contains klipper Macros and python scripts to do motor synchronization for AWD 3D printers. It has been applied and verified on a VZbot.
 
 WARNING: Please apply the script standalone first. Check the output. If everything makes sense, incorporate it in your flow.
 
