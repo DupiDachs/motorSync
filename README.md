@@ -48,7 +48,7 @@ The Macro does not use any delayed gcode. This is achieved by having a constant 
 
 The Macro determines static noise of your accelerometer (and gravity) and removes it from the measurement, which makes the approach more reliable.
 
-To bring down the quality of the synchronization to a single number, the peak vibration is determined and then the area of the chart is determined within an (arbitrary) 12ms timespan. The data that was cleaned from noise looks like this:
+To bring down the quality of the synchronization to a single number, the peak vibration is determined and then the area of the chart is determined within an (arbitrary) 20ms timespan. The data that was cleaned from noise looks like this:
 
 <img src="Vibrations.png" width="500">
 
