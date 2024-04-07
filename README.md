@@ -2,6 +2,8 @@
 
 This repository contains scripts to do motor synchronization for AWD 3D printers. It has been prepared to be used on the VZbot
 
+WARNING: Please apply the script standalone first. Check the output. If everything makes sense, incorporate it in your flow.
+
 ## Prerequisite
 
 Install https://github.com/droans/klipper_extras. The synchronization procedure makes use of python scripts from within klipper Macros.
