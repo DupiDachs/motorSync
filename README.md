@@ -67,6 +67,7 @@ Differences between the two scripts
 |-------------------|---------------------------------------------------------------------------------------|-----------------------------------------------------------|
 | master            | python script invoced via system call. uses klippy.serial to invoke klipper movements | klipper Macro. uses klipper_extras to call python scripts |
 | timing            | hard coded manually                                                                   | klipper times Macro automatically                         |
+| PAUSE&RESUME macro| needed to synchronize Python and Klipper                                              | Not needed. Klipper is master of the timing               |
 | motor sync factor | determined by highest peaks of magnitude and moving average                           | integrate to determine area of magnitude                  |
 
 motors_sync has a big potential of speedup using the BUZZ Macro of motorSync. In the end, motorSync is faster, but more iterations are performed. Getting a result accurate to a 1/32 fullstep requires 46sec + homing.
