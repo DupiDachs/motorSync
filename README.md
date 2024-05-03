@@ -12,33 +12,39 @@ repository, prompt with no to complete. Add the update section to your printer_d
 
 ## Installation
 
-The folder structure of the repository represents the home directory. Copy the provided files accordingly.
+The folder structure of the repository represents the home directory. Copy the provided files accordingly OR create symbolic links. Using links has the advantage that updates of the repository will automatically apply when pulling the changes from GitHub.
 
-Copy the python files that evaluate motor synchronization and ADXL noise.
+Clone the repository in your home directory.
 ```
 cd
-mkdir klipper_functions/
-cp motorSync/klipper_functions/* klipper_functions/
+git clone https://github.com/DupiDachs/motorSync.git
 ```
-Copy the yaml file for letting klipper know where to find the python files.
+These are the files that evaluate motor synchronization and ADXL noise.
+```
+cd
+mkdir klipper_functions
+cd klipper_functions
+ln -s ../motorSync/klipper_functions/motorSync_accel.py motorSync_accel.py
+ln -s ../motorSync/klipper_functions/motorSync_noise.py  motorSync_noise.py
+```
+Symbolic link for the yaml file for letting klipper know where to find the python files.
 ```
 cd
 mkdir printer_data/functions
-cp motorSync/printer_data/functions/* printer_data/functions/
+cd printer_data/functions
+ln -s ../../motorSync/printer_data/functions/config.yaml config.yaml
 ```
 Copy the config file containing the motorSync Macros.
 ```
 cd
-cp motorSync/printer_data/config/motorSync.cfg printer_data/config/
+cd motorSync/printer_data/config
+ln -s ../../motorSync/printer_data/config/MotorSync.cfg MotorSync.cfg
 ```
 Take a look at `motorSync/printer_data/config/printer.cfg` and add the changes to your `printer.cfg` file.
 
 ### Changes to printer_data/config/motorSync.cfg
 - adapt the `ACCELEROMETER_MEASURE` calls if your chip is not named `adxl345`
-- on top of the file
-  - adjust the number of microsteps you are using
-  - adjust the distance of a fullstep of your printer
-  - adjust the number of optimization runs, depending on the accuracy you wish
+- no other changes required anymore with newest version
  
 ## Usage
 
