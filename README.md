@@ -34,7 +34,7 @@ mkdir printer_data/functions
 cd printer_data/functions
 ln -s ../../motorSync/printer_data/functions/config.yaml config.yaml
 ```
-Copy the config file containing the motorSync Macros.
+Symbolic link to the config file containing the motorSync Macros.
 ```
 cd
 cd motorSync/printer_data/config
