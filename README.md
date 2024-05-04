@@ -37,7 +37,7 @@ ln -s ../../motorSync/printer_data/functions/config.yaml config.yaml
 Symbolic link to the config file containing the motorSync Macros.
 ```
 cd
-cd motorSync/printer_data/config
+cd printer_data/config
 ln -s ../../motorSync/printer_data/config/MotorSync.cfg MotorSync.cfg
 ```
 Take a look at `motorSync/printer_data/config/printer.cfg` and add the changes to your `printer.cfg` file.
