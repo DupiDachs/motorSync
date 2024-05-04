@@ -6,7 +6,7 @@ WARNING: Please apply the script standalone first. Check the output. If everythi
 
 ## Prerequisite
 
-Install https://github.com/droans/klipper_extras. The synchronization procedure makes use of python scripts from within klipper Macros.
+Install https://github.com/droans/klipper_extras (i.e. https://github.com/droans/klipper_extras/tree/main/extended_macro). The synchronization procedure makes use of python scripts from within klipper Macros.
 At the moment, there is a small bug within the klipper_extras installer. If prompted to update your printer_data/config/moonraker.conf for updating the
 repository, prompt with no to complete. Add the update section to your printer_data/config/moonraker.conf manually.
 
