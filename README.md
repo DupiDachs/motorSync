@@ -4,6 +4,8 @@ This repository contains klipper Macros and python scripts to do motor synchroni
 
 WARNING: Please apply the script standalone first. Check the output. If everything makes sense, incorporate it in your flow.
 
+[Update 2026-July-14]: Range parameter added (can be used like 'MOTSYNC_SYNC RANGE=0.25' for optimizing within a range of a quarter of a fullstep). Accelerometer is now read from config. No need to adapt in Macro.
+
 ## Prerequisite
 
 Install https://github.com/droans/klipper_extras (i.e. https://github.com/droans/klipper_extras/tree/main/extended_macro). The synchronization procedure makes use of python scripts from within klipper Macros.
@@ -43,8 +45,7 @@ ln -s ../../motorSync/printer_data/config/MotorSync.cfg MotorSync.cfg
 Take a look at `motorSync/printer_data/config/printer.cfg` and add the changes to your `printer.cfg` file.
 
 ### Changes to printer_data/config/motorSync.cfg
-- adapt the `ACCELEROMETER_MEASURE` calls if your chip is not named `adxl345`
-- no other changes required anymore with newest version
+- no other changes required anymore with newest version, but you can play with range, etc. See the file for this.
  
 ## Usage
 
